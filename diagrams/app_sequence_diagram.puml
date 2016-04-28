@@ -1,0 +1,23 @@
+@startuml
+
+actor Alice
+Application -> CowboyPlug: Start
+CowboyPlug -> Cowboy: Start
+CowboyPlug -> Plug: Start
+Application -> Supervisor: Start
+Supervisor -> Timer: :init
+Supervisor -> Timer: :monitor
+Timer -> Timer: Wake
+Timer -> "Monitored Server": :GET
+alt successful case
+Timer -> Timer: (update state)
+else some kind of failure
+Timer -> Timer: Crash!
+Supervisor -> Timer:restart
+end
+Alice -> Cowboy: /bt_status
+Cowboy -> Plug: :call
+Plug -> Timer: :get_status
+Plug  --> Cowboy: :response
+Cowboy -> Alice: :response
+@enduml

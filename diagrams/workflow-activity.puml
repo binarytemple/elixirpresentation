@@ -1,0 +1,33 @@
+@startuml
+
+partition Developer {
+(*)  --> "commit code"
+}
+partition "Codeship Build" {
+-left--> "push notification received by codeship"
+If "master or tagged" then
+    -left--> [Yes] "perform a docker build"
+    If "build succeeded" then
+        --> [Yes] "continue"
+         If "last commit was a tag operation" then
+                --> [Yes] "label using tag "
+                -right--> [push to docker hub](*)
+            else
+                --> [No] "label as 'latest'"
+                -right--> [push to docker hub](*)
+            Endif
+    else
+        --> [No] "Notify of failure"
+        --> (*)
+    Endif
+
+
+    }
+else
+    --> [No] "ignore build"
+    --> (*)
+Endif
+}
+
+@enduml
+
