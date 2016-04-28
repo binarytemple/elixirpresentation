@@ -15,27 +15,65 @@ Startup tech pack - Thursday, April 28, 2016
 
 ---
 
+Goals of this talk
+
+* How to write a micro-service in Elixir
+* Demonstrate how Elixir survives failure
+* How to bake it into a Docker image
+* How to perform simple CI using Codeship
+
+If there is any time left...
+
+* How to use docker-compose with for acceptance testing using chromedriver
+
+And if you want to chat later..
+
+* How to build and run Riak from within Docker
+
+---
+
+Grab some images
+
+hub.docker.com
+
+[`/r/binarytemple/docker-phoenix`](https://hub.docker.com/r/binarytemple/docker-phoenix)
+[`/r/binarytemple/elixir_plug_poc`](https://hub.docker.com/r/binarytemple/elixir_plug_poc)
+[`/r/binarytemple/phoenix_commerce_dev`](https://hub.docker.com/r/binarytemple/phoenix_commerce_dev)
+[`/r/binarytemple/riak `](https://hub.docker.com/r/binarytemple/riak)
+
+---
+
+
 # Why not choose OOP language X?
 
 ![fill 180% left ](./images/oop-claimed.png )
 
-On a whiteboard it starts out like this[^1]
+On a whiteboard it starts out like this [^1]. "Lets describe an elegant taxonomy in order to better represent the system".
 
-[^1]: Original author unknown
+* Modularity 
+* Code reuse
+* Encapsulation
 
 ---
 
-# The reality
-
-![fill left](./images/oop-reality.png )
-
-Lots of jobs. Armies of code monkeys working away on projects like [^2] :
+Money being burnt. Armies of code monkeys working away on projects like [^2] :
 
 * £40m GP data extraction system; 
 * £215m Common Agricultural Policy IT system
 * £1.1bn e-borders system
+* FizzBuzzEnterpriseEdition
 
-Google FizzBuzzEnterpriseEdition...
+And government procurement isn't the only place where this money is getting lost
+
+![fill 150% right](./images/oop-reality.png )
+
+---
+
+OOP was made for writing
+
+* Windowing systems
+* GUI components
+* Single player games
 
 ---
 
@@ -103,7 +141,7 @@ Books
 
 ---
 [^1]: Original author unknown
+
 [^2]: "Some of the recent reports on IT disasters by the body and the Public Accounts Committee include: the £40m GP data extraction system; the £215m Common Agricultural Policy IT system, which could also incur yearly fines of £180m from the EU; and the £1.1bn e-borders system" - source theregister.co.uk
 
-
-
+---
