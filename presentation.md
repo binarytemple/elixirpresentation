@@ -23,7 +23,7 @@ Startup tech pack - Thursday, April 28, 2016
 * How to bake an Elixir application into a Docker image
 * How to perform simple CI using Codeship
 
-And if you want to chat later..
+### And if you want to chat later..
 
 * How to build and run Riak from within Docker
 * How to use docker-compose for acceptance testing with Chromedriver
